@@ -1,5 +1,4 @@
 :root {
-    --search-width: 600px;
     --main-color: #003fb3;
 }
 
@@ -8,8 +7,6 @@ html,body {
 }
 
 .cover {
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +14,6 @@ html,body {
 
 .flex {
     padding: 15px;
-    width: var(--search-width);
     background-color: rgba(0,0,0, 70%);
     display: flex;
     flex-direction: column;
@@ -53,11 +49,14 @@ html,body {
     text-align: end;
 }
 
-
 /* tymczasowe przejscie do strony glownej */
 #temp-main-page {
     position: absolute;
     bottom: 200px;
     right: 300px;
     text-decoration: none;
+}
+/* tymczasowe dla ikony mikrofonu */
+.hide {
+    display: none;
 }
