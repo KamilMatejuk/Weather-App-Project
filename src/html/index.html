@@ -7,8 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App Project</title>
+    <link rel="stylesheet" type="text/css" href="../css/fontello/css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic.css">
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
 </head>
 <body>
-    
+    <!-- tło -->
+    <div class="cover">
+        <!-- navigacja wyszukiwania -->
+        <div class="flex">
+            <p class="txt command">Choose your location</p>
+            <form class="form" action="#">
+                <input type="text" name="location" class="txt fraze">
+                <input type="submit" name="Submit" class="txt btn">
+            </form>
+            <div class="icons">
+                <!-- tryb obsługi mową -->
+                <a href="#"><i class="icon-mic txt"></i></a>
+                <!-- lokalizowanie -->
+                <a href="#"><i class="icon-location txt"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- tymczasowe przejście do strony głównej, potem to będzie robione po kliknięciu Submit -->
+    <a href="main.html" id="temp-main-page">GO</a>
 </body>
 </html>
