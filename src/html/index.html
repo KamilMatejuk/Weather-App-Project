@@ -38,5 +38,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<!-- testuje sobie API pogodowe -->
+<!-- <script> 
+function weather( cityName ) {
+    const key = '5a61784f731702ae57e794e5dceb17ab';
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + key)  
+    .then(function(res) { return res.json() }) // Convert data to json
+    .then(function(data) {
+      console.log(data); // pełne informacje
+      console.log(data.name);
+      console.log(data.weather[0].description);
+      //console.log(data.main.temp);
+      console.log(Math.round(parseFloat(data.main.temp)-273.15) + '°C');
+      // fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+    })
+    .catch(function() {
+      // catch any errors
+    });
+  }
+  window.onload = function() {
+    weather( 'Wroclaw' ); 
+  }
+  </script> -->
+
 </body>
 </html>
