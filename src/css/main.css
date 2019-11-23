@@ -102,11 +102,11 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
 }
-#basic-info > p {
+.info-par {
     font-weight: bold;
     color: black;
 }
-#basic-info span {
+.info-span {
     font-size: 1.4em;
     color: var(--main-color);
 }
@@ -198,6 +198,28 @@ p {
     color: white;
 }
 
+/* DETAILS ABOUT THE DAY */
+.details {
+    margin: 50px auto;
+    padding: 35px;
+    background: rgba(255,255,255, 50%);
+}
+
+/* GRAPH */
+.graphs {
+    margin: 50px auto;
+    background: rgba(255,255,255, 50%);
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.graph {
+    width: 500px;
+    height: 200px;
+    background: rgb(149, 233, 194);
+    margin: 10px;
+}
 
 /* FOOTER */
 footer {
@@ -215,6 +237,12 @@ footer p {
 }
 footer span {
     color: orange;
+}
+
+/* UKRYWANIE ODPOWIEDNIEJ SEKCJI */
+.none, .none * {
+    display: none;
+    padding: 0;
 }
 
 /* tymczasowy boarder */

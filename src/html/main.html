@@ -35,20 +35,21 @@
             </div>
             <hr class="divider">
             <div id="basic-info">
-                <p><span>Sunny</span></p> <!-- description -->
-                <p>Pressure: <span>1016 hPa</span></p>
-                <p>Humidity: <span>67%</span></p>
-                <p>Wind: <span>123 km/h</span></p>
+                <p class="info-par"><span class="info-span">Sunny</span></p> <!-- description -->
+                <p class="info-par">Pressure: <span class="info-span">1016 hPa</span></p>
+                <p class="info-par">Humidity: <span class="info-span">67%</span></p>
+                <p class="info-par">Wind: <span class="info-span">123 km/h</span></p>
             </div>
 
         </div>
         <!-- zmiana widoku info / wykresy -->
+        <!-- żeby zmienić widok trzeba dodać klasę .none odpowiednio do (dateslider + details) lub (graphs)  -->
         <div id="view-switch" class="col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3">
             <button class="switch on" id="btn-detail">Details</button>
             <button class="switch off" id="btn-graph">Graphs</button>
         </div>
         <!-- slider z wyborem dnia -->
-        <div id="date-slider">
+        <div id="date-slider" class="">
             <div class="date-choose chosen">
                 <p class="date-txt">19.12<br>Monday</p>
                 <i class="icon-sun date-icon"></i>
@@ -100,12 +101,21 @@
             </div>
         </div>
         <!-- szczegółowe informacje dotyczące danego dnia -->
-        <div id="details">
-
+        <div class="details col-11 col-sm-9 col-md-7 col-lg-6 col-xl-6">
+            <p class="info-par">The weather is <span class="info-span">Sunny</span></p>
+            <p class="info-par">Current temperature: <span class="info-span">-23°C</span></p>
+            <p class="info-par">Min temperature: <span class="info-span">-27°C</span></p>
+            <p class="info-par">Max temperature: <span class="info-span">40°C</span></p>
+            <p class="info-par">Pressure: <span class="info-span">1016 hPa</span></p>
+            <p class="info-par">Humidity: <span class="info-span">67%</span></p>
+            <p class="info-par">Wind: <span class="info-span">123 km/h</span></p>
+            <p class="info-par">Sunrise: <span class="info-span">6:18 AM</span></p>
+            <p class="info-par">Sunset: <span class="info-span">5:49 PM</span></p>
         </div>
         <!-- wykresy temperatury i opadów -->
-        <div id="graphs">
-
+        <div class="graphs col-11">
+            <p class="graph">This paragraph imitates a temperature graph, will be replaced</p>
+            <p class="graph">This paragraph imitates a raining graph, will be replaced</p>
         </div>
         <!-- stopka z informacjami -->
         <footer>
