@@ -2,3 +2,10 @@
 .icon-mic:before { content: '\e800'; } /* '' */
 .icon-location:before { content: '\e801'; } /* '' */
 .icon-search:before { content: '\e802'; } /* '' */
+.icon-sun:before { content: '\e803'; } /* '' */
+.icon-cloud:before { content: '\e804'; } /* '' */
+.icon-rain:before { content: '\e805'; } /* '' */
+.icon-cloud-sun:before { content: '\e806'; } /* '' */
+.icon-cloud-flash:before { content: '\e807'; } /* '' */
+.icon-snow:before { content: '\e808'; } /* '' */
+.icon-cloud-wind:before { content: '\e809'; } /* '' */
