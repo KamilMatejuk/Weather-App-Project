@@ -7,13 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/fontello/css/fontello.css">
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 <body>
     <div class="cover">
-        <div class="temp"></div>
+        <!-- pasek z lokalizacja na górze -->
+        <div id="localization" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-6">
+            <div>
+                <form class="form" action="#">
+                    <input type="text" name="location" class="txt fraze" value="Wrocław">
+                    <input type="submit" class="txt btn" value="&#xe802;" style="font-family:fontello;">
+                </form>
+                <a href="#"><i class="icon-mic txt icons"></i></a>
+                <a href="#"><i class="icon-location txt icons"></i></a>
+            </div>
+            <p>(12.054, 65.022)</p>
+        </div>
+        <!-- podstawowe dane z dnia dzisiejszego -->
+        <div id="basic-data" class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-6">
+            <div id="basic-temp">
+                <p class="big-txt" id="temp-txt">-23</p>
+                <p class="md-txt" id="temp-unit">°C</p>
+                <button class="md-txt btn" id="btn-change-unit">°F</button> <!-- po wciśnieciu tego przycisku temp-unit zmienia sie na °F, a zapis na buttonie na °C -->
+            </div>
+            <hr class="divider">
+            <div id="basic-info">
+                <p><span>Sunny</span></p> <!-- description -->
+                <p>Pressure: <span>1016 hPa</span></p>
+                <p>Humidity: <span>67%</span></p>
+                <p>Wind: <span>123 km/h</span></p>
+            </div>
+
+        </div>
+        <!-- zmiana widoku info / wykresy -->
+        <div id="view-switch" class="col-8 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+            <button class="switch on" id="btn-detail">Details</button>
+            <button class="switch off" id="btn-graph">Graphs</button>
+        </div>
+        <!-- slider z wyborem dnia -->
+        <div id="date-slider">
+
+        </div>
+        <!-- szczegółowe informacje dotyczące danego dnia -->
+        <div id="details">
+
+        </div>
+        <!-- wykresy temperatury i opadów -->
+        <div id="graphs">
+
+        </div>
+        <!-- stopka z informacjami -->
+        <div id="footer">
+
+        </div>
 
     </div>
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
