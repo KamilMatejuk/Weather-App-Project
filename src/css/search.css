@@ -1,1 +1,65 @@
-// css dla strony z wyszukiwaniem
+:root {
+    --main-color: #003fb3;
+}
+
+html,body {
+    height: 100%;
+}
+
+.cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    padding: 15px;
+    background-color: rgba(255,255,255, 70%);
+    display: flex;
+    flex-direction: column;
+}
+
+.txt {
+    color: var(--main-color);
+    font-weight: 700;
+}
+.command {
+    font-size: 2.5em;
+    text-align: center;
+}
+.form {
+    display: flex;
+    height: 70px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.form > .fraze {
+    flex: 7;
+    text-align: center;
+}
+.form > .btn {
+    flex: 1;
+    margin-left: 10px;
+    background: var(--main-color);
+    color: white;
+    border-radius: 10%;
+}
+.form > * {
+    font-size: 1.5em;
+}
+.icons {
+    font-size: 2em;
+    text-align: end;
+}
+
+/* tymczasowe przejscie do strony glownej */
+#temp-main-page {
+    position: absolute;
+    bottom: 200px;
+    right: 300px;
+    text-decoration: none;
+}
+/* tymczasowe dla ikony mikrofonu */
+.hide {
+    display: none;
+}
