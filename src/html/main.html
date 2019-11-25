@@ -115,6 +115,10 @@
         </div>
         <!-- wykresy temperatury i opadów -->
         <div class="graphs col-11">
+                <!-- testowanie animacji ładowania - odkomentuj, zeby zobaczyc odswiezanie na main
+                    <div class="content">
+                        <img src="https://picsum.photos/300/300/?random" />
+                   </div> -->
             <p class="graph">This paragraph imitates a temperature graph, will be replaced</p>
             <p class="graph">This paragraph imitates a raining graph, will be replaced</p>
         </div>
@@ -126,10 +130,23 @@
 
     </div>
 
+    <!-- loader przy wczytywaniu storny -->
+    <div id="loader-wrapper">
+        <span class="cloud_base"><span class="rounds"></span></span>
+    </div>
+
+    <!-- testuje animacje wczytywania strony -->
+    <script>
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            window.onscroll = function () { window.scrollTo(0, 0); };
+            window.onload = function(){ document.getElementById("loader-wrapper").style.display = "none" }
+    </script>
+
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    
 </body>
 </html>
