@@ -273,15 +273,19 @@ footer span {
 	position: relative;
 	top: 120px;
 
-	/* for basic little animation */
 	-webkit-transition: 3s ease-in all;
 	-moz-transition: 3s ease-in all;
-	transition: 3s ease-in all;
+    transition: 3s ease-in all;
+    animation: move 5s infinite;
 }
 
-.cloud_base:hover {
-	left: 15%;
+/* basic animacja chmury */
+@keyframes move {
+    0% {  top: 120px; }
+    50% { top: 50px;}
+    100% { top: 120px;}
 }
+
 
 .rounds {
 	width: 300px;
