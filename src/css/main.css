@@ -211,12 +211,13 @@ p {
     background: rgba(255,255,255, 50%);
     padding: 15px;
     display: flex;
+    flex-grow: 1;
     flex-wrap: wrap;
     justify-content: center;
 }
 .graph {
-    width: 500px;
-    height: 200px;
+    width: 800px;
+    height: 250px;
     background: rgb(149, 233, 194);
     margin: 10px;
 }
