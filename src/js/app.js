@@ -117,11 +117,6 @@ window.onload = function() {
 
     chart.render();
   }
-
-//   var $canvas = $("#canvas");
-// var $parent = $canvas.parent();
-// $canvas.width($parent.width());
-// $canvas.height($parent.height());
   
   window.onload = function() {
     weather( 'Wroclaw' ); 
