@@ -51,10 +51,11 @@ p {
     background: rgba(255,255,255, 50%);
     display: grid;
     padding: 0;
-    grid-template-columns: 220px 3px 1fr;
+    grid-template-columns: 260px 3px 1fr;
 }
 #basic-temp {
     margin: 15px;
+    padding-top: 15px;
     display: grid;
     grid-template-columns: 1fr 40px;
     grid-template-rows: 40px 40px 1fr;
@@ -79,7 +80,7 @@ p {
 }
 .big-txt {
     font-weight: bold;
-    font-size: 6em;
+    font-size: 5.5em;
     text-align: end;
 }
 .md-txt {
@@ -169,15 +170,17 @@ p {
     text-align: center;
 }
 .date-choose .date-temp {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     text-align: center;
 }
 .date-choose .min {
     grid-area: tmin;
+    padding-left: 10px;
 }
 .date-choose .max {
     grid-area: tmax;
+    padding-right: 10px;
 }
 .date-choose .divider {
     grid-area: divider;
