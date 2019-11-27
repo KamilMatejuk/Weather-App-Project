@@ -40,7 +40,7 @@
     });
   }
 
-  //eksport godzin
+  //eksport dni
   function getDays( cityName ) {
     const key = '5a61784f731702ae57e794e5dceb17ab';
     return fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + key)  
@@ -48,14 +48,15 @@
     .then(function(data) {
       
       let tablicaDni = new Array();
+      let tablicaTemp = new Array();
       
       for (let i = 0; i < 8; i+=1)
       {
-        let dzien = data.list[i].dt_txt;
-        tablicaDni.push(dzien);
+        tablicaDni.push(data.list[i].dt_txt);
+        tablicaTemp.push(Math.round(parseFloat(data.list[i].main.temp)-273.15));
       }
-      // console.log("tablica godzin, ", tablicaGodzin);
-      return tablicaDni;
+      let daneWykres = {tablicaDni, tablicaTemp}
+      return daneWykres;
     })
     .catch(function() {
       // catch any errors
@@ -63,8 +64,8 @@
     });
   }
 
-  const rysujWykres = (days) => {
-    console.log('days: ', days);
+  const rysujWykres = (data) => {
+    console.log('days: ', data.tablicaDni[0]);
     var chart = new CanvasJS.Chart("chartContainer",
     {
 
@@ -89,14 +90,14 @@
         type: "line",
 
         dataPoints: [
-          {x: new Date(days[0]), y: 26 },
-          {x: new Date(days[1]), y: 38  },
-          {x: new Date(days[2]), y: 43 },
-          {x: new Date(days[3]), y: 29},
-          {x: new Date(days[4]), y: 41},
-          {x: new Date(days[5]), y: 54},
-          {x: new Date(days[6]), y: 66},
-          {x: new Date(days[7]), y: 60}
+          {x: new Date(data.tablicaDni[0]), y: data.tablicaTemp[0]},
+          {x: new Date(data.tablicaDni[1]), y: data.tablicaTemp[1]},
+          {x: new Date(data.tablicaDni[2]), y: data.tablicaTemp[2]},
+          {x: new Date(data.tablicaDni[3]), y: data.tablicaTemp[3]},
+          {x: new Date(data.tablicaDni[4]), y: data.tablicaTemp[4]},
+          {x: new Date(data.tablicaDni[5]), y: data.tablicaTemp[5]},
+          {x: new Date(data.tablicaDni[6]), y: data.tablicaTemp[6]},
+          {x: new Date(data.tablicaDni[7]), y: data.tablicaTemp[7]}
         ]
       }
       ]
