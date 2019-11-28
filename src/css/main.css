@@ -140,12 +140,21 @@ p {
 
 /* DATE-SLIDER */
 #date-slider {
-    width: 90%;
     margin: 50px auto;
-    overflow: scroll; /* TODO do poprawienia sroll zeby się scrolował */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+#date-slider::-webkit-scrollbar {
+    display: none;
 }
 .date-choose {
-    float: left;
+    flex-basis: 150px;
+    flex-grow: 1;
     width: 150px;
     display: grid;
     grid-template-columns: repeat(2, 1fr) 2px;
@@ -180,6 +189,11 @@ p {
         rgba(0, 0, 0, 0.75),
         rgba(0, 0, 0, 0));
 }
+.last .divider {
+    background-image: linear-gradient(
+        0deg, rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0));
+}
 #date-slider .chosen {
     background: var(--main-color);
     border-radius: 5%;
@@ -191,15 +205,13 @@ p {
 /* DETAILS ABOUT THE DAY */
 .details {
     margin: 50px auto;
-    padding: 35px;
+    padding: 25px;
     background: rgba(255,255,255, 50%);
 }
 
 /* GRAPH */
 .graphs {
     margin: 50px auto;
-    background: rgba(255,255,255, 50%);
-    padding: 15px;
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
@@ -208,7 +220,8 @@ p {
 .graph {
     width: 800px;
     height: 250px;
-    background: rgb(149, 233, 194);
+    padding: 15px;
+    background: rgba(255,255,255, 50%);
     margin: 10px;
 }
 
