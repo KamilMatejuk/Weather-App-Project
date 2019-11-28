@@ -149,11 +149,10 @@ p {
     width: 150px;
     display: grid;
     grid-template-columns: repeat(2, 1fr) 2px;
-    grid-template-rows: 45px 50px 50px;
+    grid-template-rows: 45px 50px;
     grid-template-areas:
         "text text divider"
-        "icon icon divider"
-        "tmin tmax divider";
+        "icon icon divider";
     background-color: rgba(255,255,255, 50%);
 }
 .date-choose .date-txt {
@@ -169,19 +168,6 @@ p {
     line-height: 1em;
     padding-top: 5px;
     text-align: center;
-}
-.date-choose .date-temp {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-}
-.date-choose .min {
-    grid-area: tmin;
-    padding-left: 10px;
-}
-.date-choose .max {
-    grid-area: tmax;
-    padding-right: 10px;
 }
 .date-choose .divider {
     grid-area: divider;
