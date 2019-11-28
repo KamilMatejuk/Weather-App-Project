@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App Project</title>
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- icons -->
     <link rel="stylesheet" type="text/css" href="../css/fontello/css/fontello.css">
+    <!-- css -->
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <script src="../js/app.js"></script>
-    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700,800|Oswald:500,700&display=swap" rel="stylesheet">
 </head>
-<!-- TODO dodać w sliderze <a> zeby dało się coś klikać !!! -->
 <body>
     <div class="cover">
         <!-- pasek z lokalizacja na górze -->
@@ -138,24 +140,12 @@
         <span class="cloud_base"><span class="rounds"></span></span>
     </div>
 
+
+    <script type="text/javascript" src="../js/app.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
     <!-- testuje animacje wczytywania strony -->
-    <script>
-        window.onscroll = function () { window.scrollTo(0, 0); };
-           
-        window.onload = function() {
-            weather( 'Wroclaw' ); 
-            
-            // dane do wykresow + rysowanie wykresow
-            getData('Wroclaw').then((response)=> {
-            tempChart(response);
-            humidityChart(response);
-        });
-            
-            document.getElementById("loader-wrapper").style.display = "none";
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
-            window.onscroll = function () { }; 
-        }
-    </script>
+    <script type="text/javascript" src="../js/testAnimation.js"></script>
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
