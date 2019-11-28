@@ -63,3 +63,15 @@ html,body {
 .hide {
     display: none;
 }
+
+
+/* ---------------- mobile ---------------- */
+@media all and (max-width: 600px){
+    .form > .fraze {
+        width: 87%;
+    }
+    .form > .btn {
+        width: 13%;
+    }
+
+}
