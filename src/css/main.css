@@ -279,7 +279,6 @@ footer span {
     transition: 3s ease-in all;
     animation: move 5s infinite;
 }
-
 /* basic animacja chmury */
 @keyframes move {
     0% {  top: 120px; }
