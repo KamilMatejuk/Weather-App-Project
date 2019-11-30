@@ -3,7 +3,8 @@ function weather( cityName ) {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + key)  
     .then(function(res) { return res.json() }) // Convert data to json
     .then(function(data) {
-      console.log(data.city.name);
+      console.log(`City name: ${cityName}`);
+      console.log(`Miasto: ${data.city.name}`);
 
       // podstawowe informacje co 8*3h
       for (let i = 0; i < 40; i+=8)
@@ -17,10 +18,8 @@ function weather( cityName ) {
       console.log(data); // pełne informacje
       // fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
     })
-    .catch(function() {
+    .catch(function(error) {
       // catch any errors
+      console.log(error);
     });
-  }
-  window.onload = function() {
-    weather( 'Wroclaw' ); 
   }

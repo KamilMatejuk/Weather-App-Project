@@ -1,4 +1,3 @@
-
 // pobranie danych z API
 function weather( cityName ) {
   const key = '5a61784f731702ae57e794e5dceb17ab';
@@ -6,7 +5,8 @@ function weather( cityName ) {
   .then(function(res) { return res.json() }) // Convert data to json
   .then(function(data) {
     //testy
-    console.log(data.city.name);
+    console.log('checking');
+    // console.log(`Miasto: ${data.city.name}`);
     // podstawowe informacje co 8*3h
     for (let i = 0; i < 40; i+=8)
     {
@@ -21,13 +21,15 @@ function weather( cityName ) {
 
    // displayWeather(data);   //przykladowe wywolanie wyswietlania dla danych
   })
-  .catch(function() {
+  .catch(function(error) {
+    console.log(error);
     // catch any errors
   });
 }
-window.onload = function() {
-  weather( 'Wroclaw' ); 
-}
+
+// window.onload = function() {
+//   weather( 'Wroclaw' ); 
+// }
 
   //eksport danych- data (w tym dzien i godzina), temperatura i wilgotnosc
   function getData( cityName ) {
@@ -55,10 +57,10 @@ window.onload = function() {
   }
 
   const tempChart = (data) => {
-    var chart = new CanvasJS.Chart("temp",
+    var chart = new CanvasJS.Chart("graph",
     {
       title:{
-      text: "Temperatury dobowe"
+      text: "Daily temperatures"
       },
       axisX: {
         valueFormatString: "HH:mm",
@@ -87,10 +89,10 @@ window.onload = function() {
   }
 
   const humidityChart = (data) => {
-    var chart = new CanvasJS.Chart("humidity",
+    var chart = new CanvasJS.Chart("graph",
     {
       title:{
-      text: "Wilgotnosc"
+      text: "Humidity"
       },
       axisX: {
         valueFormatString: "HH:mm",
@@ -118,6 +120,13 @@ window.onload = function() {
     chart.render();
   }
   
-  window.onload = function() {
-    weather( 'Wroclaw' ); 
-  }
+  // window.onload = function() {
+  //   weather( 'Wroclaw' ); 
+  // }
+
+  // window.onload = function() {
+    // var url = new URL(window.location);
+    // var params = new URLSearchParams(url.search);
+    // const passedLocation =  params.get("location");
+    // console.log(passedLocation);
+  // }

@@ -213,16 +213,18 @@ p {
     margin: 50px auto;
     background: rgba(255,255,255, 50%);
     padding: 15px;
-    display: flex;
+    /* display: flex; */
     flex-grow: 1;
     flex-wrap: wrap;
     justify-content: center;
+    display: none;
 }
 .graph {
     width: 800px;
     height: 250px;
     background: rgb(149, 233, 194);
     margin: 10px;
+    display: none;
 }
 
 /* FOOTER */
