@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App Project</title>
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- icons -->
     <link rel="stylesheet" type="text/css" href="../css/fontello/css/fontello.css">
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700,800|Oswald:500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700,800|Oswald:500,700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="cover">
         <!-- pasek z lokalizacja na górze -->
@@ -22,15 +26,15 @@
             <div>
                 <form class="form" action="#">
                     <!-- <div class="autocomplete">  Wrrrr-->
-                    <input id="city" type="text" name="location" class="autocomplete txt fraze" autocomplete="off" placeholder="Show me the weather in..">
-                <!-- </div> -->
+                    <input id="city" type="text" name="location" class="autocomplete txt fraze" autocomplete="off"
+                        placeholder="Show me the weather in..">
+                    <!-- </div> -->
                     <input type="submit" class="txt btn" value="&#xe802;" style="font-family:fontello;">
                 </form>
                 <a href="#"><i class="icon-mic txt icons"></i></a>
                 <a href="#"><i class="icon-location txt icons"></i></a>
                 <a href="#"><i class="weather-icon icon-cloud txt icons"></i></a>
             </div>
-            <p>(12.054, 65.022)</p>
         </div>
         <!-- podstawowe dane z dnia dzisiejszego -->
         <!--To be read from API-->
@@ -38,11 +42,12 @@
             <div id="basic-temp">
                 <p class="big-txt" id="temp-txt">-23</p>
                 <p class="md-txt" id="temp-unit">°C</p>
-                <button class="md-txt btn" id="btn-change-unit">°F</button> <!-- po wciśnieciu tego przycisku temp-unit zmienia sie na °F, a zapis na buttonie na °C -->
+                <button class="md-txt btn" id="btn-change-unit">°F</button>
+                <!-- po wciśnieciu tego przycisku temp-unit zmienia sie na °F, a zapis na buttonie na °C -->
             </div>
             <hr class="divider">
             <div id="basic-info">
-                <p class="info-par"><span class="info-span">Wroclaw</span></p> 
+                <p class="info-par"><span class="info-span">Wroclaw</span></p>
                 <p class="info-par"><span class="info-span">Sunny</span></p> <!-- description -->
                 <p class="info-par">Pressure: <span class="info-span">1016 hPa</span></p>
                 <p class="info-par">Humidity: <span class="info-span">67%</span></p>
@@ -234,12 +239,12 @@
         </div>
         <!-- wykresy temperatury i opadów -->
         <div class="graphs col-11">
-                <div class="graph" id="graph"></div>
-                <!-- testowanie animacji ładowania - odkomentuj, zeby zobaczyc odswiezanie na main
+            <div class="graph" id="graph"></div>
+            <!-- testowanie animacji ładowania - odkomentuj, zeby zobaczyc odswiezanie na main
                     <div class="content">
                         <img src="https://picsum.photos/300/300/?random" />
                    </div> -->
-                   
+
         </div>
         <!-- stopka z informacjami -->
         <footer>
@@ -268,10 +273,17 @@
     <script type="text/javascript" src="../js/testAnimation.js"></script>
 
     <!-- bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
-    
+
 </body>
+
 </html>
