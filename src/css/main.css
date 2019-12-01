@@ -332,6 +332,42 @@ footer span {
 		0px -10px 15px rgba(255, 255, 255, 0.4);
 }
 
+/* wyszukiwanie */
+.autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 73%;
+    left: 4%;
+    right: 26%;
+  }
+  
+  .autocomplete-items div {
+    padding: 5px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+  }
+
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+  }
+  
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+  }
+
+
+
 /* ---------------- mobile ---------------- */
 @media all and (max-width: 700px){
     #basic-data {

@@ -12,6 +12,7 @@
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700,800|Oswald:500,700&display=swap" rel="stylesheet">
 </head>
@@ -21,7 +22,9 @@
         <div id="localization" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-6">
             <div>
                 <form class="form" action="#">
-                    <input type="text" name="location" class="txt fraze" value="Wrocław">
+                    <!-- <div class="autocomplete">  Wrrrr-->
+                    <input id="city" type="text" name="location" class="autocomplete txt fraze" autocomplete="off" value="Wrocław">
+                <!-- </div> -->
                     <input type="submit" class="txt btn" value="&#xe802;" style="font-family:fontello;">
                 </form>
                 <a href="#"><i class="icon-mic txt icons"></i></a>
