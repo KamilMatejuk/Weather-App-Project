@@ -74,7 +74,7 @@ Have fun discovering various forecast information shown in a comfortable way.
 * Kamil Matejuk - [KamilMatejuk](https://github.com/KamilMatejuk)
 * Marek Sołdaczuk - [MarekSoldaczuk](https://github.com/MarekSoldaczuk)
 * Teresa Kozera - [TeresaKozera](https://github.com/teresakozera)
-* Wiktor Szymczyk - [](https://github.com/)
+* Wiktor Szymczyk - [WianWian](https://github.com/WianWian)
 
 
 <!-- LICENSE -->
