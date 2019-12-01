@@ -1,6 +1,7 @@
-const buttonLocation = document.querySelector(".icon-location").addEventListener('click', (e) => {
-    alert('Not implemented yet');
-});
+
+// const buttonLocation = document.querySelector(".icon-location").addEventListener('click', (e) => {
+//     alert('Not implemented yet');
+// });
 
 const buttonMic = document.querySelector(".icon-mic").addEventListener('click', (e) => {
     alert('Not implemented yet');
