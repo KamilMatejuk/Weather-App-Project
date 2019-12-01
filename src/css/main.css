@@ -212,10 +212,11 @@ p {
 /* GRAPH */
 .graphs {
     margin: 50px auto;
-    display: flex;
+    /*display: flex;*/
     flex-grow: 1;
     flex-wrap: wrap;
     justify-content: center;
+    display: none;
 }
 .graph {
     width: 800px;
@@ -223,6 +224,7 @@ p {
     padding: 15px;
     background: rgba(255,255,255, 50%);
     margin: 10px;
+    display: none;
 }
 
 /* FOOTER */
@@ -279,6 +281,7 @@ footer span {
     transition: 3s ease-in all;
     animation: move 5s infinite;
 }
+
 /* basic animacja chmury */
 @keyframes move {
     0% {  top: 120px; }
@@ -347,7 +350,7 @@ footer span {
     z-index: 99;
     top: 73%;
     left: 4%;
-    right: 26%;
+    right: 29%;
   }
   
   .autocomplete-items div {
