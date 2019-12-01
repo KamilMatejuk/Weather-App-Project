@@ -235,6 +235,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 200px;
 }
 footer p {
     margin-left: 50px;
