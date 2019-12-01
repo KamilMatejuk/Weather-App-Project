@@ -31,94 +31,117 @@ function weather( cityName ) {
 //   weather( 'Wroclaw' ); 
 // }
 
-  //eksport danych- data (w tym dzien i godzina), temperatura i wilgotnosc
-  function getData( cityName ) {
-    const key = '5a61784f731702ae57e794e5dceb17ab';
-    return fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + key)  
-    .then(function(res) { return res.json() }) // Convert data to json
-    .then(function(data) {
-      
-      let days = [];
-      let temperatures = [];
-      let humidity = [];
-      
-      for (let i = 0; i < 8; i+=1)
-      {
-        days.push(data.list[i].dt_txt);
-        temperatures.push(Math.round(parseFloat(data.list[i].main.temp)-273.15));
-        humidity.push(data.list[i].main.humidity);
-      }
-      return {days, temperatures, humidity};
-    })
-    .catch(function() {
-      // catch any errors
-      console.log('Error, data was not read');
+// data export: date (day, hour), temperature and humidity
+function getData( cityName, day ) {
+  const key = '5a61784f731702ae57e794e5dceb17ab';
+  return fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + key)  
+  .then(function(res) { return res.json() }) // Convert data to json
+  .then(function(data) {
+
+    // console.log(day);
+    // console.log(typeof Object.values(data)[3]);
+    // console.log(Object.values(Object.values(data)[3]));
+
+    // console.log('foreach: ');
+    // Object.values(Object.values(data)[3]).forEach((item) => {
+    //   console.log(item.dt_txt);
+    // });
+
+    let indexOfThePassedDay = Object.values(Object.values(data)[3]).findIndex((item) => {
+      return item.dt_txt === day;
     });
-  }
-
-  const tempChart = (data) => {
-    var chart = new CanvasJS.Chart("graph",
+    
+    if (indexOfThePassedDay < 0)
     {
-      title:{
-      text: "Daily temperatures"
-      },
-      axisX: {
-        valueFormatString: "HH:mm",
-        interval:3,
-        intervalType: "hour",
-        labelFormatter: function (e) {
-          return CanvasJS.formatDate( e.value, "HH");
-        }
-      },
-      axisY:{
-        includeZero: false,
-        title: "C\u00B0"
-      },
-      data: [
-      {
-        type: "area",
-        dataPoints: Object.values(data.days).map((dni,index)=>{
-          return {x: new Date(dni), y: data.temperatures[index]
-          };
-        })
-      }
-    ]
-  });
+      indexOfThePassedDay = 0;
+    }
 
-    chart.render();
-  }
+    console.log(indexOfThePassedDay);
 
-  const humidityChart = (data) => {
-    var chart = new CanvasJS.Chart("graph",
+
+    
+    let days = [];
+    let temperatures = [];
+    let humidity = [];
+    
+    for (let i = indexOfThePassedDay; i < indexOfThePassedDay + 8; i+=1)
     {
-      title:{
-      text: "Humidity"
-      },
-      axisX: {
-        valueFormatString: "HH:mm",
-        interval:3,
-        intervalType: "hour",
-        labelFormatter: function (e) {
-          return CanvasJS.formatDate( e.value, "HH");
-        }
-      },
-      axisY:{
-        includeZero: false,
-        title: "%"
-      },
-      data: [
-      {
-        type: "area",
-        dataPoints: Object.values(data.days).map((dni,index)=>{
-          return {x: new Date(dni), y: data.humidity[index]
-          };
-        })
-      }
-    ]
+      console.log(`i: ${i}`);
+      days.push(data.list[i].dt_txt);
+      temperatures.push(Math.round(parseFloat(data.list[i].main.temp)-273.15));
+      humidity.push(data.list[i].main.humidity);
+    }
+    return {days, temperatures, humidity};
+  })
+  .catch(function() {
+    // catch any errors
+    console.log('Error, data was not read');
   });
+}
 
-    chart.render();
-  }
+const tempChart = (data) => {
+  var chart = new CanvasJS.Chart("graph",
+  {
+    title:{
+    text: "Daily temperatures"
+    },
+    axisX: {
+      valueFormatString: "HH:mm",
+      interval:3,
+      intervalType: "hour",
+      labelFormatter: function (e) {
+        return CanvasJS.formatDate( e.value, "HH");
+      }
+    },
+    axisY:{
+      includeZero: false,
+      title: "C\u00B0"
+    },
+    data: [
+    {
+      type: "area",
+      dataPoints: Object.values(data.days).map((dni,index)=>{
+        return {x: new Date(dni), y: data.temperatures[index]
+        };
+      })
+    }
+  ]
+});
+
+  chart.render();
+}
+
+const humidityChart = (data) => {
+  var chart = new CanvasJS.Chart("graph",
+  {
+    title:{
+    text: "Humidity"
+    },
+    axisX: {
+      valueFormatString: "HH:mm",
+      interval:3,
+      intervalType: "hour",
+      labelFormatter: function (e) {
+        return CanvasJS.formatDate( e.value, "HH");
+      }
+    },
+    axisY:{
+      includeZero: false,
+      title: "%"
+    },
+    data: [
+    {
+      type: "area",
+      dataPoints: Object.values(data.days).map((dni,index)=>{
+        return {x: new Date(dni), y: data.humidity[index]
+        };
+      })
+    }
+  ]
+});
+
+  chart.render();
+}
   
   // window.onload = function() {
   //   weather( 'Wroclaw' ); 

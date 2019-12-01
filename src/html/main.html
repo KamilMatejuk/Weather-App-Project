@@ -59,6 +59,14 @@
         <!-- slider z wyborem dnia -->
         <div id="date-slider" class="">
             <div class="date-choose chosen">
+                <!--
+                    from the JSON data:
+                    instead of hardcoded Thursday:
+                    const day = new Date(data.list[i].dt_txt);
+                    const dayBis = day.getDay();
+                    OR
+                    moment: https://momentjs.com/
+                -->
                 <p class="date-txt">19.12<br>Monday</p>
                 <i class="icon-sun date-icon"></i>
                 <!--example for data that needs to be read from the API and is not displayed in the data slider, just in the details-->
@@ -79,7 +87,20 @@
                 <hr class="divider">
             </div>
             <div class="date-choose">
-                <p class="date-txt">20.12<br>Tuesday</p>
+                <!--
+                    from the JSON data:
+                    instead of hardcoded Thursday:
+                    const day = new Date(data.list[i].dt_txt);
+                    const dayBis = day.getDay();
+                    OR
+                    moment: https://momentjs.com/
+                -->
+                <!--it is set to an exemplary date from the API- when the display has to vary, 
+                    as it needs to be just dd:mm and the day fo the week, but it has to be extracted from this info. 
+                    When changing please check that it does not break the setDetailsToDrawGraphs function (it needs the raw information)
+                -->
+                <p class="date-txt">2019-12-02 00:00:00</p>
+                <!-- <p class="date-txt">20.12<br>Tuesday</p> -->
                 <i class="icon-cloud date-icon"></i>
                 <!--example for data that needs to be read from the API and is not displayed in the data slider, just in the details-->
                 <!--data should be obtained via list.weather.main-->
@@ -99,6 +120,14 @@
                 <hr class="divider">
             </div>
             <div class="date-choose">
+                <!--
+                    from the JSON data:
+                    instead of hardcoded Thursday:
+                    const day = new Date(data.list[i].dt_txt);
+                    const dayBis = day.getDay();
+                    OR
+                    moment: https://momentjs.com/
+                -->
                 <p class="date-txt">21.12<br>Wednesday</p>
                 <i class="icon-rain date-icon"></i>
                 <!--example for data that needs to be read from the API and is not displayed in the data slider, just in the details-->
@@ -121,7 +150,7 @@
             <div class="date-choose">
                 <!--
                     from the JSON data:
-                    instead of Thursday:
+                    instead of hardcoded Thursday:
                     const day = new Date(data.list[i].dt_txt);
                     const dayBis = day.getDay();
                     OR
@@ -148,6 +177,14 @@
                 <hr class="divider">
             </div>
             <div class="date-choose">
+                <!--
+                    from the JSON data:
+                    instead of hardcoded Thursday:
+                    const day = new Date(data.list[i].dt_txt);
+                    const dayBis = day.getDay();
+                    OR
+                    moment: https://momentjs.com/
+                -->
                 <p class="date-txt">23.12<br>Friday</p>
                 <i class="icon-cloud-flash date-icon"></i>
                 <!--example for data that needs to be read from the API and is not displayed in the data slider, just in the details-->

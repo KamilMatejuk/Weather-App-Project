@@ -11,10 +11,21 @@ function getLocationFromSearch () {
     x.innerHTML = passedLocation;
     return passedLocation;
 }
+
+let dayToDraw;
+function setDetailsToDrawGraphs(date) {
+    dayToDraw = date;
+}
+
+function getDetailsToDrawGraphs()
+{
+    console.log(`dayToDraw: ${dayToDraw}`);
+    return dayToDraw;
+}
     
 window.onload = function () {
     // data for graphs + drawing graphs
-    getData(getLocationFromSearch ()).then((response) => {
+    getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
         tempChart(response);
         humidityChart(response);
     });
@@ -60,19 +71,18 @@ const buttonUnit = document.getElementById('btn-change-unit').addEventListener('
     }
 });
 
-const buttonGraph = document.getElementById("btn-graph").addEventListener('click', (e) => {
-    
+const buttonGraph = document.getElementById("btn-graph").addEventListener('click', (e) => {  
     document.querySelector(".graphs").style.display = 'flex';
     document.querySelector("#graph").style.display = 'block';
 
     if(document.getElementById("btn-graph").innerHTML === "Temperature")
     {
-        getData(getLocationFromSearch ()).then((response) => {
+        getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
             tempChart(response);
         });
     document.getElementById("btn-graph").innerHTML = "Humidity";
     } else {
-        getData(getLocationFromSearch ()).then((response) => {
+        getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
             humidityChart(response);
         });
         document.getElementById("btn-graph").innerHTML = "Temperature";
@@ -93,8 +103,26 @@ function displayDayOnClick (e){
 
     let displayDay = document.getElementById("details");
     let displayDayInfo = displayDay.children;
+    console.log(` details from div: ${displayDayInfo}`);
+    console.log(chosenDayInfo[0].innerHTML);
 
     dayDetails(displayDayInfo, chosenDayInfo);
+    // data for drawing a graph (the date that just got clicked!)
+    console.log(`To setDetails!: ${chosenDayInfo[0].innerHTML}`);
+    setDetailsToDrawGraphs(chosenDayInfo[0].innerHTML);
+    
+    // handling the buttons and graphs simultaneously
+    if(document.getElementById("btn-graph").innerHTML === "Temperature")
+    {
+        getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
+            humidityChart(response);
+        });
+    } else {
+        getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
+            tempChart(response);
+        });
+        
+    }
 }
 
 const dayDetails = (dDayInfo, chDayInfo) => {
