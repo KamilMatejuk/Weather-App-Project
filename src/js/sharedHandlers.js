@@ -1,3 +1,7 @@
+import '../css/main.css'
+import '../css/basic.css'
+import '../css/search.css'
+
 // const buttonLocation = document.querySelector(".icon-location").addEventListener('click', (e) => {
 //     alert('Not implemented yet');
 // });

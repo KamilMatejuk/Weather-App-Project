@@ -1,3 +1,7 @@
+import '../css/main.css'
+import '../css/basic.css'
+import '../css/search.css'
+
 window.onscroll = function () {
     window.scrollTo(0, 0);
 };

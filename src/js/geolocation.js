@@ -1,3 +1,7 @@
+import '../css/main.css'
+import '../css/basic.css'
+import '../css/search.css'
+
 function getGeolocation() {
     // check if geolocation is supported/enabled
     if ("geolocation" in navigator) {
