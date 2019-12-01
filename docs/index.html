@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App Project</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- icons -->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/fontello/css/fontello.css"> -->
+    <!-- css -->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/basic.css">
+    <link rel="stylesheet" type="text/css" href="../css/search.css"> -->
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700,800|Oswald:500,700&display=swap" rel="stylesheet">
+<link href="app.css" rel="stylesheet"></head>
+<body>
+    <!-- tło -->
+    <div class="cover">
+        <!-- navigacja wyszukiwania -->
+        <div class="flex col-10 col-sm-9 col-md-8 col-lg-7 col-xl-6">
+            <p class="txt command">Choose your location</p>
+            <form class="form" action="main.html">
+                <!-- <div class="autocomplete"> przy takim byloby idealnie autocomplete-->
+                    <input id="city" type="text" autocomplete="off" placeholder="Show me the weather in.."
+                        name="location" class="txt fraze autocomplete">
+                <!-- </div> -->
+                <input type="submit" class="txt btn" value="&#xe802;" style="font-family:fontello;">
+            </form>
+            <div class="icons">
+                <!-- tryb obsługi mową -->
+                <a href="#"><i class="icon-mic txt"></i></a>
+                <!-- lokalizowanie -->
+                <a href="#"><i class="icon-location txt"></i></a>
+                <!-- display mode -->
+                <a href="#"><i class="weather-icon icon-cloud txt icons"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- api test + wyszukiwanie -->
+    <!-- <script type="text/javascript" src="../js/app.js"></script> -->
+    <!-- Not bundled, too big-->
+    <script type="text/javascript" src="../js/cities.js"></script>
+    <!-- js -->
+    <!-- <script type="text/javascript" src="../js/geolocation.js"></script>
+    <script type="text/javascript" src="../js/sharedHandlers.js"></script>
+    <script type="text/javascript" src="../js/testApi.js"></script> -->
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+<script type="text/javascript" src="app.js"></script></body>
+</html>

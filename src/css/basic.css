@@ -1,1 +1,30 @@
-// css wspólny dla strony glownej i wyszukiwania
+/*css wspólny dla strony glownej i wyszukiwania*/
+
+:root {
+    --bg-color: #777; /*gdyby tło się za długo ładowało*/
+    --main-color: #00b30f; /*chyba nie da sie z samego css zrobic jednej zmiennej dla paru arkuszy, wiec jest osobno zdefiniowana w kazdym z css, może trzeba to bedzie zrobic w js żeby definiowac w basic.css a reszte zmienic na jej podstawie */
+}
+
+html,body {
+    height: 100%;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    background-image: url("../img/bg_sunny.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    display:block;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    /* font-family: 'Oswald', sans-serif; <- ewentualnie ten font, jak się Orbitron nie spodoba*/
+    font-family: 'Orbitron', sans-serif;
+}
+

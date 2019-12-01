@@ -1,1 +1,110 @@
-// css dla strony z wyszukiwaniem
+:root {
+    --main-color: #003fb3;
+}
+
+html,body {
+    height: 100%;
+}
+
+.cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    padding: 15px;
+    background-color: rgba(255,255,255, 70%);
+    display: flex;
+    flex-direction: column;
+}
+
+.txt {
+    color: var(--main-color);
+    font-weight: 700;
+}
+.command {
+    font-size: 2.5em;
+    text-align: center;
+}
+.form {
+    display: flex;
+    height: 70px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.form > .fraze {
+    flex: 7;
+    text-align: center;
+}
+.form > .btn {
+    flex: 1;
+    margin-left: 10px;
+    background: var(--main-color);
+    color: white;
+    border-radius: 10%;
+}
+.form > * {
+    font-size: 1.5em;
+}
+.icons {
+    font-size: 2em;
+    text-align: end;
+}
+
+/* tymczasowe przejscie do strony glownej */
+#temp-main-page {
+    position: absolute;
+    bottom: 200px;
+    right: 300px;
+    text-decoration: none;
+}
+/* tymczasowe dla ikony mikrofonu */
+.hide {
+    display: none;
+}
+
+
+ .autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 73%;
+    left: 0;
+    right: 0;
+  }
+  
+  .autocomplete-items div {
+    padding: 5px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+  }
+
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+  }
+  
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+  }
+
+
+/* ---------------- mobile ---------------- */
+@media all and (max-width: 600px){
+    .form > .fraze {
+        width: 87%;
+    }
+    .form > .btn {
+        width: 13%;
+    }
+}
