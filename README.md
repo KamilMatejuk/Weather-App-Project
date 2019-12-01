@@ -59,13 +59,13 @@ git clone https://github.com/KamilMatejuk/Weather_App_Project.git
 The app is quite simple to use. After reaching the website _[https://example.com](https://example.com)_ what you'll 
 see is the view presented as in the screenshot below.
 
-![Index](/src/img/indexScreen.png)
+![](src/img/indexScreen.PNG)
 
 Then you need to enter the name of the city for which you are looking for a weather forecast.
 To make it more precise put the _city's name, comma, 2-letter country code (ISO3166)_. You will get all proper cities in chosen country.
 The order is important - the first is city name then comma then country. Example - _London, GB_ or _New York, US_.
 
-![Main](/src/img/mainScreen.png)
+![](src/img/mainScreen.png)
 
 Finally you get an extremely accurate 5-day forecast for your city. 
 Have fun discovering various forecast information shown in a comfortable way.
