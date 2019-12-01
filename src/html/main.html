@@ -23,16 +23,17 @@
         <div id="localization" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-6">
             <div>
                 <form class="form" id="form" action="#">
-                    <input type="text" name="location" class="txt fraze" placeholder="Miasto">
+                    <input type="text" name="location" class="txt fraze" placeholder="Show me the weather in...">
                     <input type="submit" class="txt btn" value="&#xe802;" style="font-family:fontello;">
                 </form>
                 <a href="#"><i class="icon-mic txt icons"></i></a>
                 <a href="#"><i class="icon-location txt icons"></i></a>
                 <a href="#"><i class="weather-icon icon-cloud txt icons"></i></a>
             </div>
-            <p>(12.054, 65.022)</p>
+            <!-- <p>(12.054, 65.022)</p> -->
         </div>
         <!-- podstawowe dane z dnia dzisiejszego -->
+        <!--To be read from API-->
         <div id="basic-data" class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-6">
             <div id="basic-temp">
                 <p class="big-txt" id="temp-txt">-23</p>
@@ -41,6 +42,7 @@
             </div>
             <hr class="divider">
             <div id="basic-info">
+                <p class="info-par"><span class="info-span">Wroclaw</span></p> 
                 <p class="info-par"><span class="info-span">Sunny</span></p> <!-- description -->
                 <p class="info-par">Pressure: <span class="info-span">1016 hPa</span></p>
                 <p class="info-par">Humidity: <span class="info-span">67%</span></p>
@@ -190,18 +192,17 @@
             <p class="info-par">Pressure: <span class="info-span"></span></p>
             <p class="info-par">Humidity: <span class="info-span"></span></p>
             <p class="info-par">Wind: <span class="info-span"></span></p>
+            <!--No proper information about sunrise and sunset in the API-->
             <!-- <p class="info-par">Sunrise: <span class="info-span">6:18 AM</span></p>
             <p class="info-par">Sunset: <span class="info-span">5:49 PM</span></p> -->
         </div>
         <!-- wykresy temperatury i opadów -->
         <div class="graphs col-11">
                 <div class="graph" id="graph"></div>
-                <!-- <div class="graph" id="humidity"></div> -->
                 <!-- testowanie animacji ładowania - odkomentuj, zeby zobaczyc odswiezanie na main
                     <div class="content">
                         <img src="https://picsum.photos/300/300/?random" />
                    </div> -->
-                   
         </div>
         <!-- stopka z informacjami -->
         <footer>
@@ -216,23 +217,13 @@
         <span class="cloud_base"><span class="rounds"></span></span>
     </div>
 
-
-    <script type="text/javascript" src="../js/app.js"></script>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
     <!-- testuje animacje wczytywania strony -->
+    <script type="text/javascript" src="../js/sharedHandlers.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
     <script type="text/javascript" src="../js/testAnimation.js"></script>
-
-    <script>
-    //     window.onload = function() {
-        // var url = new URL(window.location);
-        // var params = new URLSearchParams(url.search);
-        // const passedLocation =  params.get("location");
-        // // checking that the info about the location is passsed from the index.html
-        // console.log(passedLocation);
-    // }
-    </script>
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

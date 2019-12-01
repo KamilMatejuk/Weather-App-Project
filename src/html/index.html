@@ -23,7 +23,7 @@
         <div class="flex col-10 col-sm-9 col-md-8 col-lg-7 col-xl-6">
             <p class="txt command">Choose your location</p>
             <form class="form" action="main.html">
-                <input type="text" name="location" class="txt fraze">
+                <input type="text" name="location" class="txt fraze" placeholder="Show me the weather in...">
                 <input type="submit" class="txt btn" value="&#xe802;" style="font-family:fontello;">
             </form>
             <div class="icons">
@@ -38,33 +38,8 @@
     </div>
 
     <!-- testuje sobie API pogodowe -->
+    <script type="text/javascript" src="../js/sharedHandlers.js"></script>
     <script type="text/javascript" src="../js/testApi.js"></script>
-    <script>
-
-    // to be expoerted t a separate file (as is used both in index.html and main.html)
-    const buttonDisplayMode = document.querySelector(".weather-icon").addEventListener('click', (e) => {
-        const icon = ".weather-icon";
-        if(e.target.classList.contains("icon-sun")) {
-            $( icon ).toggleClass( "icon-sun", false );
-            // for now, later should be changed to an icon with a moon or something like this
-            $( icon ).toggleClass( "icon-cloud", true );
-            document.querySelector(".cover").style.backgroundImage = "url('../img/bg_sunny.jpg')";
-        } else {
-            $( icon ).toggleClass( "icon-cloud", false );
-            // for now, later should be changed to an icon with a moon or something like this
-            $( icon ).toggleClass( "icon-sun", true );
-            document.querySelector(".cover").style.backgroundImage = "url('../img/Night-sky.jpg')";
-        }
-    });
-
-    const buttonLocation = document.querySelector(".icon-location").addEventListener('click', (e) => {
-        alert('Not implemented yet');
-    });
-
-    const buttonMic = document.querySelector(".icon-mic").addEventListener('click', (e) => {
-        alert('Not implemented yet');
-    });
-    </script>
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
