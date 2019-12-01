@@ -13,19 +13,21 @@ function getLocationFromSearch () {
 }
 
 let dayToDraw;
+let unitToDraw = '°C';
+
 function setDetailsToDrawGraphs(date) {
     dayToDraw = date;
 }
 
 function getDetailsToDrawGraphs()
 {
-    console.log(`dayToDraw: ${dayToDraw}`);
+    // console.log(`dayToDraw: ${dayToDraw}`);
     return dayToDraw;
 }
     
 window.onload = function () {
     // data for graphs + drawing graphs
-    getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
+    getData(getLocationFromSearch(), getDetailsToDrawGraphs(), unitToDraw).then((response) => {
         tempChart(response);
         humidityChart(response);
     });
@@ -64,10 +66,25 @@ const buttonUnit = document.getElementById('btn-change-unit').addEventListener('
         displayedUnit.innerHTML = '°F';
         e.target.innerHTML = '°C';
         tempValue.innerHTML = Math.round(tempValue.innerHTML * 1.8 + 32);
+        unitToDraw = '°F';
+        
+        if(document.getElementById("btn-graph").innerHTML === "Humidity")
+        {
+            getData(getLocationFromSearch(), getDetailsToDrawGraphs(), unitToDraw).then((response) => {
+                tempChart(response);
+            });
+        } 
     } else {
         displayedUnit.innerHTML = '°C';
         e.target.innerHTML = '°F';
         tempValue.innerHTML = Math.round((tempValue.innerHTML-32) * 5/9);
+        unitToDraw = '°C';
+        if(document.getElementById("btn-graph").innerHTML === "Humidity")
+        {
+            getData(getLocationFromSearch(), getDetailsToDrawGraphs(), unitToDraw).then((response) => {
+                tempChart(response);
+            });
+        } 
     }
 });
 
@@ -82,7 +99,7 @@ const buttonGraph = document.getElementById("btn-graph").addEventListener('click
         });
     document.getElementById("btn-graph").innerHTML = "Humidity";
     } else {
-        getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
+        getData(getLocationFromSearch(), getDetailsToDrawGraphs(), unitToDraw).then((response) => {
             humidityChart(response);
         });
         document.getElementById("btn-graph").innerHTML = "Temperature";
@@ -103,25 +120,24 @@ function displayDayOnClick (e){
 
     let displayDay = document.getElementById("details");
     let displayDayInfo = displayDay.children;
-    console.log(` details from div: ${displayDayInfo}`);
-    console.log(chosenDayInfo[0].innerHTML);
+    // console.log(` details from div: ${displayDayInfo}`);
+    // console.log(chosenDayInfo[0].innerHTML);
 
     dayDetails(displayDayInfo, chosenDayInfo);
     // data for drawing a graph (the date that just got clicked!)
-    console.log(`To setDetails!: ${chosenDayInfo[0].innerHTML}`);
+    // console.log(`To setDetails!: ${chosenDayInfo[0].innerHTML}`);
     setDetailsToDrawGraphs(chosenDayInfo[0].innerHTML);
     
     // handling the buttons and graphs simultaneously
     if(document.getElementById("btn-graph").innerHTML === "Temperature")
     {
-        getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
+        getData(getLocationFromSearch(), getDetailsToDrawGraphs(), unitToDraw).then((response) => {
             humidityChart(response);
         });
     } else {
-        getData(getLocationFromSearch(), getDetailsToDrawGraphs()).then((response) => {
+        getData(getLocationFromSearch(), getDetailsToDrawGraphs(), unitToDraw).then((response) => {
             tempChart(response);
         });
-        
     }
 }
 
@@ -132,7 +148,7 @@ const dayDetails = (dDayInfo, chDayInfo) => {
     }
 }
 
-const displaySearchData = document.querySelector('.txt.fraze').addEventListener('change', (e) => {
+const displaySearchData = document.querySelector('.autocomplete.txt.fraze').addEventListener('change', (e) => {
     // the function to display data should be here, to be replaced
     weather(e.currentTarget.value);
 });
