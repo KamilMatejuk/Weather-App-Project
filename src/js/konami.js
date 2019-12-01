@@ -1,6 +1,3 @@
-import '../css/main.css'
-import '../css/basic.css'
-import '../css/search.css'
 
 const pressed = [];
 const secretCode = 'coderscamp';

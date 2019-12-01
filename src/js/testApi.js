@@ -1,6 +1,3 @@
-import '../css/main.css'
-import '../css/basic.css'
-import '../css/search.css'
 
 function weather( cityName ) {
     const key = '5a61784f731702ae57e794e5dceb17ab';

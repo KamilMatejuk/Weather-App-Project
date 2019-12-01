@@ -1,6 +1,3 @@
-import '../css/main.css'
-import '../css/basic.css'
-import '../css/search.css'
 
 //tablica potencjalnych miast xd
   let cities = ["Hurzuf", "Novinki", "Gorkhā", "State of Haryāna", "Holubynka", "Bāgmatī Zone", "Mar’ina Roshcha", "Republic of India", "Kathmandu", "Laspi", "Merida", "Vinogradovo", "Qarah Gawl al ‘Ulyā", "Cherkizovo", "Alupka", "Lichtenrade", "Zavety Il’icha", "‘Azriqam", 
